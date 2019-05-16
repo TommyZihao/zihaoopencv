@@ -1,12 +1,8 @@
 # 第十章：物体检测与人脸识别【子豪兄opencv-python教程】
 
-![人脸识别+人眼检测](https://upload-images.jianshu.io/upload_images/13714448-b0658f8312ec97ea.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-![人脸识别](https://upload-images.jianshu.io/upload_images/13714448-8b51c1b390b8eff8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![opencv人脸识别+人眼识别+微笑识别](https://upload-images.jianshu.io/upload_images/13714448-d6cb96e66caef9f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-
-[TOC]
 
 # 本章内容
 
@@ -14,13 +10,25 @@
 - 用人脸识别同样的道理，扩展到人眼识别上
 - 用opencv自带的Harr级联分类器进行人脸识别与人眼识别（附源代码，直接复制粘贴即可运行）
 
-# 译者
+![人脸+人眼+微笑检测](https://upload-images.jianshu.io/upload_images/13714448-e87fd27267f533e4.gif?imageMogr2/auto-orient/strip)
 
-同济大学 子豪兄
+
+
+[TOC]
+
+# 关于本文
+
+[OpenCV-Python官方文档英文教程：Face Detection using Haar Cascades](<https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_objdetect/py_face_detection/py_face_detection.html#face-detection>)<br>
+
+[OpenCV-Python中文教程【子豪兄opencv-python教程】](<https://github.com/TommyZihao/zihaoopencv>)<br>
+
+译者：同济大学 子豪兄 
+
+2019-5-16
 
 Bilibili视频教程：[同济子豪兄-子豪兄opencv-python教程](https://space.bilibili.com/1900783/#/)<br>知乎专栏：[人工智能小技巧](https://zhuanlan.zhihu.com/c_1032626015746502656)<br>简书专栏：[人工智能小技巧](https://www.jianshu.com/u/38cccf09b515)<br>Github：[TommyZihao](<https://github.com/TommyZihao>)<br>
 
-2019-5-16
+
 
 # 基础知识
 
@@ -175,7 +183,7 @@ cv2.imwrite('output.jpg',img)
 ## 调用电脑摄像头进行实时人脸识别
 
 ```python
-# 调用电脑摄像头进行实时人脸+眼睛识别
+# 调用电脑摄像头进行实时人脸+眼睛识别，可直接复制粘贴运行
 # bilibili视频教程:同济子豪兄
 # 2019-5-16
 import cv2
@@ -213,7 +221,7 @@ cap.release()
 cv2.destroyAllWindows()
 ```
 
-
+![人脸+人眼识别](https://upload-images.jianshu.io/upload_images/13714448-ec6a2d00184e4316.gif?imageMogr2/auto-orient/strip)
 
 ![调用摄像头进行实时人脸识别](https://upload-images.jianshu.io/upload_images/13714448-50afc4ee2cb8769a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -222,7 +230,7 @@ cv2.destroyAllWindows()
 ## 增加摄像头实时微笑识别功能
 
 ```python
-# 调用电脑摄像头进行实时人脸+眼睛+微笑识别
+# 调用电脑摄像头进行实时人脸+眼睛+微笑识别，可直接复制粘贴运行
 # bilibili视频教程:同济子豪兄
 # 2019-5-16
 import cv2
@@ -272,12 +280,22 @@ cap.release()
 cv2.destroyAllWindows()
 ```
 
-
+![人脸+人眼+微笑检测](https://upload-images.jianshu.io/upload_images/13714448-e87fd27267f533e4.gif?imageMogr2/auto-orient/strip)
 
 ![微笑检测](https://upload-images.jianshu.io/upload_images/13714448-b9f928a4e4bc6a5c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 wei'xiao
 
 ![微笑检测](https://upload-images.jianshu.io/upload_images/5201633-62406a163322f429.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp)
+
+
+
+# 局限性
+
+- 仅为人脸检测，非人脸“辩识”，即只能框出人脸的位置，看不出人脸是谁。
+- 仅能标出静态图片和视频帧上的人脸、人眼和微笑，不能进行“活体识别”，即不能看出这张脸是真人还是手机上的照片，如果用于人脸打卡签到、人脸支付的话会带来潜在的安全风险。
+- 仅为普通的机器学习方法，没有用到深度学习和深层神经网络。
+
+
 
 # 参考文章与扩展阅读
 
@@ -290,3 +308,17 @@ wei'xiao
 # 赞赏码
 
 ![子豪兄的赞赏码](https://upload-images.jianshu.io/upload_images/13714448-bec288cb077c7f08.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+# 原图
+
+![lena图](https://upload-images.jianshu.io/upload_images/13714448-73f80f62e9366c27.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![武林外传](https://upload-images.jianshu.io/upload_images/13714448-e489614e2f36512d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![家有儿女1](https://upload-images.jianshu.io/upload_images/13714448-32109cef0c687367.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![家有儿女2](https://upload-images.jianshu.io/upload_images/13714448-c9a3b7ed40404de7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![复仇者联盟](https://upload-images.jianshu.io/upload_images/13714448-b23876ba27496809.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![世界名画：抱貂女郎](https://upload-images.jianshu.io/upload_images/13714448-83efdeec7e0cd5df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
