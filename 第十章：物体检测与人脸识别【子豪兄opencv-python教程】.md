@@ -1,5 +1,4 @@
 # 第十章：物体检测与人脸识别【子豪兄opencv-python教程】
-
 ![opencv人脸识别+人眼识别+微笑识别](https://upload-images.jianshu.io/upload_images/13714448-d6cb96e66caef9f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
@@ -8,7 +7,7 @@
 
 - 使用基于Haar特征的Cascade级联分类器进行人脸识别（听起来好高大上，但其实原理很简单）
 - 用人脸识别同样的道理，扩展到人眼识别上
-- 用opencv自带的Harr级联分类器进行人脸识别与人眼识别（附源代码，直接复制粘贴即可运行）
+- 用opencv自带的Harr级联分类器进行人脸、人眼与微笑识别（附源代码，直接复制粘贴即可运行）
 
 ![人脸+人眼+微笑检测](https://upload-images.jianshu.io/upload_images/13714448-e87fd27267f533e4.gif?imageMogr2/auto-orient/strip)
 
@@ -28,7 +27,7 @@
 
 Bilibili视频教程：[同济子豪兄-子豪兄opencv-python教程](https://space.bilibili.com/1900783/#/)<br>知乎专栏：[人工智能小技巧](https://zhuanlan.zhihu.com/c_1032626015746502656)<br>简书专栏：[人工智能小技巧](https://www.jianshu.com/u/38cccf09b515)<br>Github：[TommyZihao](<https://github.com/TommyZihao>)<br>
 
-
+# 粉丝答疑交流QQ群：`953712961`
 
 # 基础知识
 
@@ -127,7 +126,7 @@ for (x,y,w,h) in faces:
 
 # 在"img2"窗口中展示效果图
 cv2.imshow('img2',img)
-# 监听键盘上任何按键，如有案件即退出并关闭窗口，并将图片保存为output.jpg
+# 监听键盘上任何按键，如有按键即退出并关闭窗口，并将图片保存为output.jpg
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 cv2.imwrite('output.jpg',img)
@@ -145,13 +144,13 @@ cv2.imwrite('output.jpg',img)
 #导入opencv
 import cv2
 
-# 导入人脸级联分类器引擎，'.xml'文件里包含训练出来的人脸特征
+# 导入人脸级联分类器引擎，'.xml'文件里包含训练出来的人脸特征，cv2.data.haarcascades即为存放所有级联分类器模型文件的目录
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades+'haarcascade_frontalface_default.xml')
 # 导入人眼级联分类器引擎吗，'.xml'文件里包含训练出来的人眼特征
 eye_cascade = cv2.CascadeClassifier(cv2.data.haarcascades+'haarcascade_eye.xml')
 
 # 读入一张图片，引号里为图片的路径，需要你自己手动设置
-img = cv2.imread('image5.jfif')
+img = cv2.imread('image3.png')
 
 # 用人脸级联分类器引擎进行人脸识别，返回的faces为人脸坐标列表，1.3是放大比例，5是重复识别次数
 faces = face_cascade.detectMultiScale(img, 1.3, 5)
@@ -180,7 +179,7 @@ cv2.imwrite('output.jpg',img)
 
 ![名画-人脸检测](https://upload-images.jianshu.io/upload_images/13714448-8e24eef3b4c1f100.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-## 调用电脑摄像头进行实时人脸识别
+## 调用电脑摄像头进行实时人脸识别和人眼识别
 
 ```python
 # 调用电脑摄像头进行实时人脸+眼睛识别，可直接复制粘贴运行
