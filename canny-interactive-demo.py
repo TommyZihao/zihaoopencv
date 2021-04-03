@@ -1,17 +1,27 @@
 import cv2
 import numpy as np
 
+# 载入图片
 # img = cv2.imread('images/IMG_20201209_023607.jpg')
 img = cv2.imread('crack.png')
+
+w, h = img.shape[0:2]
+
+# 放缩，用于窗口过大或过小时
+# Ratio =5
+# new_shape = (int(h/Ratio), int(w/Ratio))
+# img = cv2.resize(img, new_shape)
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+# gray = cv2.resize(gray, new_shape)
+
+# 预处理
 # gray = cv2.GaussianBlur(gray,(3,3),0)
 
 window_name = 'trackbar demo' # 显示图片窗口的名称
 cv2.namedWindow(window_name) # 窗口大小可以改变
-cv2.resizeWindow(window_name, (int(img.shape[0]/20), int(img.shape[1]/20)))
 
-cv2.createTrackbar('Min',window_name,100, 1000, lambda x: None)
-cv2.createTrackbar('Max',window_name,100, 1000, lambda x: None)
+cv2.createTrackbar('Min', window_name, 100, 1000, lambda x: None)
+cv2.createTrackbar('Max', window_name, 100, 1000, lambda x: None)
 
 try:
     while(True):
